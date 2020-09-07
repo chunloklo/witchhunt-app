@@ -6,6 +6,8 @@ eventually, serve the frontend from the webservice so you don't have to deploy t
 
 ## Getting set up
 
+install golang and npm
+
 get all the go dependencies 
 ```
 go build ./...
