@@ -172,7 +172,6 @@ func (g *Game) run() {
 							"selfInfo": g.players[p],
 						})
 						g.hub.sendMessage <- SendMessageParameter{uuid: p, message: returnMessage}
-
 					}
 				}
 			}
@@ -239,6 +238,8 @@ func (g *Game) run() {
 						g.witches[uuid] = player
 					}
 
+					// Prepare for Day 1
+
 					// Clear waiting on map
 					g.waitingOn = make(map[uuid.UUID]bool)
 					g.nextFunc = g.checkStartDay1
@@ -287,8 +288,9 @@ func (g *Game) run() {
 						}
 					}
 				}
-
 			}
+
+			// stage_person_somethingelse
 
 			if clientMessage.message.Type == "APPRENTICE_START_ROLE_SELECT" {
 				message := clientMessage.message
