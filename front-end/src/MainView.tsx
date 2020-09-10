@@ -4,6 +4,7 @@ import LobbyView from './views/LobbyView';
 import ApprenticeStartView from './views/ApprenticeStartView';
 import NightView from './views/NightView';
 import DayView from './views/DayView';
+import SetNameViewFunc from './views/SetNameViewFunc';
 
 type MainViewProps = {
 }
@@ -48,7 +49,7 @@ class MainView extends React.Component<MainViewProps, MainViewState> {
 
     render() {
         if (this.state.serverMessage['action'] === 'SET_NAME') {
-            return <SetNameView ws={this.ws} message={this.state.serverMessage} />
+            return <SetNameViewFunc ws={this.ws} message={this.state.serverMessage} />
         }
 
         if (this.state.serverMessage['action'] === 'LOBBY') {
